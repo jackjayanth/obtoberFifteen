@@ -1,6 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { select, Store } from '@ngrx/store';
-import { selectBooks } from '../store/books.selector';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  select,
+  Store
+} from '@ngrx/store';
+import { invokeBooksAPI } from '../store/books.action';
+import {
+  selectBooks
+} from '../store/books.selector';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +18,13 @@ import { selectBooks } from '../store/books.selector';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private store: Store) { }
+  constructor(private store: Store) {}
 
   books$ = this.store.pipe(select(selectBooks))
+  // books$ = this.store.select(selectBooks);
 
   ngOnInit(): void {
+    this.store.dispatch(invokeBooksAPI())
   }
 
 }
