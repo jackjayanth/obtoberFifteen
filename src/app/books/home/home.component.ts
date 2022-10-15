@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private store: Store) { }
 
-  books$= this.store.pipe(select(selectBooks))
+  books$ = this.store.pipe(select(selectBooks))
 
   ngOnInit(): void {
   }
