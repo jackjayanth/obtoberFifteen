@@ -1,0 +1,8 @@
+{
+  "books": [{
+    "id": 1,
+    "title": "Sample",
+    "author": "Jayanth",
+    "cost": 300
+  }]
+}
