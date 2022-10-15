@@ -1,6 +1,6 @@
-export interface Books {
+export interface Book {
   id: number;
   name: string;
   author: string;
-  cost: string;
+  cost: number;
 }
